@@ -11,5 +11,8 @@
     "SKILLS": "Habilidades",
     "CONTACT": "Contacto",
     "ABOUT": "Sobre mí"
+  },
+  "SKILLS": {
+    "TITLE": "Comptétences"
   }
 }

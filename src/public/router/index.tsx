@@ -6,7 +6,9 @@ import Project from "public/pages/project";
 import Skills from "public/pages/skills";
 import Layout from "public/shared/components/layout";
 import { setListProject } from "public/shared/reduxStore/projects/reducers";
+import { setListSkill } from "public/shared/reduxStore/skills/reducers";
 import { getProjects } from "public/shared/service/Project";
+import { getSkills } from "public/shared/service/SkillsService";
 import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -22,19 +24,31 @@ const PublicRoutes: React.FC = () => {
   * LYFECICLE
   */
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const fetchedProjects = await getProjects();
-        dispatch(setListProject(fetchedProjects))
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        // setLoading(false);
-      }
-    };
-
     fetchProjects();
+    fetchSkills()
   }, []);
+
+  /**
+   * API
+   */
+  const fetchProjects = async () => {
+    try {
+      const fetchedProjects = await getProjects();
+      dispatch(setListProject(fetchedProjects))
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+    }
+  };
+
+  const fetchSkills = async () => {
+    try {
+      const fetchedSkills = await getSkills();
+      dispatch(setListSkill(fetchedSkills))
+    } catch (error) {
+      console.error('Error fetching skills:', error);
+    }
+  };
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
