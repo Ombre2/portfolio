@@ -32,5 +32,14 @@
   },
   "SKILLS": {
     "TITLE": "Comptétences"
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "NAME_LABEL": "Nom",
+    "EMAIL_LABEL": "Email",
+    "MESSAGE_LABEL": "Message",
+    "SEND_BUTTON": "Envoyer",
+    "SUCCESS_MESSAGE": "Message envoyé avec succès!",
+    "ERROR_MESSAGE": "Échec de l'envoi du message, veuillez réessayer."
   }
 }
