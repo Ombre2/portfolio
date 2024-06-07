@@ -1,8 +1,10 @@
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -25,11 +27,11 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col justify-center items-center h-full">
           <h1 className="text-3xl font-semibold p-4">Mon Portfolio</h1>
           <ul className="flex flex-col space-y-2 p-4">
-            <li><Link to="/public/home">Home</Link></li>
-            <li><Link to="/public/projects">Projects</Link></li>
-            <li><Link to="/public/skills">Skills</Link></li>
-            <li><Link to="/public/contact">Contact</Link></li>
-            <li><Link to="/public/about">About</Link></li>
+            <li><Link to="/public/home">{t('NAV.HOME')}</Link></li>
+            <li><Link to="/public/projects">{t('NAV.PROJECTS')}</Link></li>
+            <li><Link to="/public/skills">{t('NAV.SKILLS')}</Link></li>
+            <li><Link to="/public/contact">{t('NAV.CONTACT')}</Link></li>
+            <li><Link to="/public/about">{t('NAV.ABOUT')}</Link></li>
           </ul>
         </div>
       </nav>

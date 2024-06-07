@@ -8,7 +8,7 @@ const Layout: React.FC = () => {
     <div className="flex min-h-screen max-h-screen overflow-hidden">
       <Navbar />
       <div className="flex flex-col flex-grow lg:ml-64">
-        <main className="flex-grow p-4 overflow-auto">
+        <main className="flex-grow  overflow-auto">
           <Outlet />
         </main>
         <Footer />
