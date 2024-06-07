@@ -11,5 +11,23 @@
     "SKILLS": "Skills",
     "CONTACT": "Contact",
     "ABOUT": "About"
+  },
+  "PROJECTS": {
+    "TITLE": "My Projects",
+    "DESCRIPTION": "Here are some of my recent projects.",
+    "PROJECTS_LIST": [
+      {
+        "TITLE": "Baztille",
+        "DESCRIPTION": "A project for Baztille.",
+        "TECHNOLOGIES": "React, TailwindCSS, Firebase",
+        "LINK": "https://baztille.example.com"
+      },
+      {
+        "TITLE": "Concours ENI",
+        "DESCRIPTION": "A project for Concours ENI.",
+        "TECHNOLOGIES": "Vue, Vuetify, Node.js",
+        "LINK": "https://concourseni.example.com"
+      }
+    ]
   }
 }

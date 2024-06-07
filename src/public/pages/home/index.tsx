@@ -1,19 +1,26 @@
+import { useAppSelector } from "public/main/redux-store/app.hooks";
 import LanguageSelector from "public/shared/components/langueSelector";
+import { selectAllProjectState } from "public/shared/reduxStore/projects/selectors";
+import { IProject } from "public/shared/types/Project";
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import Masonry from 'react-masonry-css';
 import { Link } from "react-router-dom";
-import Sayna_space from "../../shared/assets/image/project/Sayna_space.png";
-import baztille from "../../shared/assets/image/project/baztille.jpg";
-import concoursEni from "../../shared/assets/image/project/concoursEni.png";
-import momentum from "../../shared/assets/image/project/momentum.png";
-import wiptify from "../../shared/assets/image/project/wiptify.png";
 
 const Home: FC = () => {
+  /**
+   * TRADUCTION
+   */
   const { t } = useTranslation();
 
-  const images = [baztille, concoursEni, momentum, Sayna_space, wiptify];
+  /**
+   * REDUX
+   */
+  const { listProject } = useAppSelector(selectAllProjectState)
 
+  /**
+   * VARIABLE
+   */
   const breakpointColumnsObj = {
     default: 3,
     1100: 3,
@@ -36,15 +43,19 @@ const Home: FC = () => {
             columnClassName="pl-4"
           >
             {
-              images.map((img, index) => (
-                <div key={index} className="mb-4 overflow-hidden">
-                  <img
-                    className="w-full h-auto max-h-64 object-cover transition-transform duration-300 hover:scale-110"
-                    src={img}
-                    alt={`Image du projet ${index + 1}`}
-                  />
-                </div>
-              ))
+              listProject.map((project: IProject, index: number) => {
+                const { file_name, isRecent, title } = project;
+                return (
+                  isRecent && <div key={index} className="mb-4 overflow-hidden">
+                    <img
+                      className="w-full h-auto max-h-64 object-cover transition-transform duration-300 hover:scale-110"
+                      src={require(`../../shared/assets/image/project/${file_name}`)}
+                      alt={title}
+                    />
+                  </div>
+                )
+
+              })
             }
           </Masonry>
         </div>
