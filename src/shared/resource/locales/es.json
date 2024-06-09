@@ -14,5 +14,9 @@
   },
   "SKILLS": {
     "TITLE": "Comptétences"
+  },
+  "ERROR": {
+    "FETCH_PROJECTS": "Error al recuperar los proyectos de {{name}}",
+    "FETCH_SKILLS": "Error al recuperar las habilidades de {{name}}"
   }
 }

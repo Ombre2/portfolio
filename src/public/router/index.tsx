@@ -6,14 +6,20 @@ import Project from "public/pages/project";
 import Skills from "public/pages/skills";
 import Layout from "public/shared/components/layout";
 import { setListProject } from "public/shared/reduxStore/projects/reducers";
-import { setListSkill } from "public/shared/reduxStore/skills/reducers";
+import { setListSkill, setLoading } from "public/shared/reduxStore/skills/reducers";
 import { getProjects } from "public/shared/service/Project";
 import { getSkills } from "public/shared/service/SkillsService";
 import React, { useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 const PublicRoutes: React.FC = () => {
+  /**
+   * TRADUCTION
+   */
+  const { t } = useTranslation();
 
   /**
    * REDUX
@@ -36,16 +42,19 @@ const PublicRoutes: React.FC = () => {
       const fetchedProjects = await getProjects();
       dispatch(setListProject(fetchedProjects))
     } catch (error) {
-      console.error('Error fetching projects:', error);
+      toast.error(t('ERROR.FETCH_PROJECTS', { name: "ANDRIARILALAO Johny Lino" }));
     }
   };
 
   const fetchSkills = async () => {
     try {
+      dispatch(setLoading(true))
       const fetchedSkills = await getSkills();
       dispatch(setListSkill(fetchedSkills))
+      dispatch(setLoading(false))
     } catch (error) {
-      console.error('Error fetching skills:', error);
+      dispatch(setLoading(false))
+      toast.error(t('ERROR.FETCH_SKILLS', { name: "ANDRIARILALAO Johny Lino" }));
     }
   };
 

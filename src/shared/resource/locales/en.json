@@ -41,5 +41,9 @@
     "SEND_BUTTON": "Send",
     "SUCCESS_MESSAGE": "Message sent successfully!",
     "ERROR_MESSAGE": "Failed to send message, please try again."
+  },
+  "ERROR": {
+    "FETCH_PROJECTS": "Error fetching {{name}}'s projects",
+    "FETCH_SKILLS": "Error fetching {{name}}'s skills"
   }
 }
