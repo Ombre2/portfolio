@@ -29,5 +29,8 @@
         "LINK": "https://concourseni.example.com"
       }
     ]
+  },
+  "SKILLS": {
+    "TITLE": "Skills"
   }
 }
