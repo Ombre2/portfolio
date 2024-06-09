@@ -17,13 +17,17 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": [
+    ".",
+    "src/types/**/*.d.ts" // Ajoutez cette ligne pour inclure les types
+  ],
   "paths": {
+    "@/*": ["src/*"],
     "@public/*": ["src/public/*"],
     "@public/main/*": ["src/public/main/*"],
     "@public/modules/*": ["src/public/modules/*"],
     "@public/router/*": ["src/public/router/*"],
-
+    "@shared/*": ["src/shared/*"],
     "@private/*": ["src/private/*"]
   }
 }

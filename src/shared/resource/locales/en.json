@@ -1,0 +1,15 @@
+{
+  "HOME": {
+    "WELCOME": "Welcome to My Portfolio",
+    "INTRODUCTION": "Hi, I'm Johny, a web developer specializing in creating stunning and responsive web applications. Here are some of my recent projects.",
+    "LEARN_MORE": "Learn more about me",
+    "CONTACT": "Contact me"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills",
+    "CONTACT": "Contact",
+    "ABOUT": "About"
+  }
+}
