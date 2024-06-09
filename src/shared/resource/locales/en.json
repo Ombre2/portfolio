@@ -1,7 +1,7 @@
 {
   "HOME": {
-    "WELCOME": "Welcome to My Portfolio",
-    "INTRODUCTION": "Hi, I'm Johny, a web developer specializing in creating stunning and responsive web applications. Here are some of my recent projects.",
+    "WELCOME": "Welcome to my Portfolio",
+    "INTRODUCTION": "Hello, I am Johny, a web developer specializing in creating attractive and responsive web applications. Here are some of my recent projects.",
     "LEARN_MORE": "Learn more about me",
     "CONTACT": "Contact me"
   },
@@ -14,21 +14,8 @@
   },
   "PROJECTS": {
     "TITLE": "My Projects",
-    "DESCRIPTION": "Here are some of my recent projects.",
-    "PROJECTS_LIST": [
-      {
-        "TITLE": "Baztille",
-        "DESCRIPTION": "A project for Baztille.",
-        "TECHNOLOGIES": "React, TailwindCSS, Firebase",
-        "LINK": "https://baztille.example.com"
-      },
-      {
-        "TITLE": "Concours ENI",
-        "DESCRIPTION": "A project for Concours ENI.",
-        "TECHNOLOGIES": "Vue, Vuetify, Node.js",
-        "LINK": "https://concourseni.example.com"
-      }
-    ]
+    "DESCRIPTION": "Here are all my projects.",
+    "VISIT_SITE": "Visit site"
   },
   "SKILLS": {
     "TITLE": "Skills"

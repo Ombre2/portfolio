@@ -1,3 +1,4 @@
+import LanguageSelector from "public/shared/components/langueSelector";
 import { addContact } from 'public/shared/service/Contact';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -37,6 +38,9 @@ const Contact: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className=" text-center">
+        <LanguageSelector /> {/* Ajout du sélecteur de langue */}
+      </div>
       <h1 className="text-3xl font-semibold mb-8 text-center">{t('CONTACT.TITLE')}</h1>
       <form className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
         {success && <p className="text-green-500 p-1">{t('CONTACT.SUCCESS_MESSAGE')}</p>}

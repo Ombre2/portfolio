@@ -1,11 +1,17 @@
 import { IProject } from "public/shared/types/Project";
 import React from 'react';
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   project: IProject
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  /**
+  * TRADUCTION
+  */
+  const { t } = useTranslation();
+
   /**
    * VARIABLE
    */
@@ -30,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       </div>
       <div className="px-6 pb-4">
         <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-          Visit site
+          {t('PROJECTS.VISIT_SITE')}
         </a>
       </div>
     </div>

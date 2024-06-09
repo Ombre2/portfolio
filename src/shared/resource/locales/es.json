@@ -1,6 +1,6 @@
 {
   "HOME": {
-    "WELCOME": "Bienvenido a mi Portfolio",
+    "WELCOME": "Bienvenido a mi Portafolio",
     "INTRODUCTION": "Hola, soy Johny, un desarrollador web especializado en la creación de aplicaciones web atractivas y responsivas. Aquí están algunos de mis proyectos recientes.",
     "LEARN_MORE": "Aprende más sobre mí",
     "CONTACT": "Contáctame"
@@ -10,10 +10,24 @@
     "PROJECTS": "Proyectos",
     "SKILLS": "Habilidades",
     "CONTACT": "Contacto",
-    "ABOUT": "Sobre mí"
+    "ABOUT": "Acerca de"
+  },
+  "PROJECTS": {
+    "TITLE": "Mis Proyectos",
+    "DESCRIPTION": "Aquí están todos mis proyectos.",
+    "VISIT_SITE": "Visitar sitio"
   },
   "SKILLS": {
-    "TITLE": "Comptétences"
+    "TITLE": "Habilidades"
+  },
+  "CONTACT": {
+    "TITLE": "Contacto",
+    "NAME_LABEL": "Nombre",
+    "EMAIL_LABEL": "Correo electrónico",
+    "MESSAGE_LABEL": "Mensaje",
+    "SEND_BUTTON": "Enviar",
+    "SUCCESS_MESSAGE": "¡Mensaje enviado con éxito!",
+    "ERROR_MESSAGE": "Error al enviar el mensaje, por favor intenta nuevamente."
   },
   "ERROR": {
     "FETCH_PROJECTS": "Error al recuperar los proyectos de {{name}}",

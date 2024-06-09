@@ -3,6 +3,7 @@ import { faAngular, faGit, faLaravel, faNode, faReact } from "@fortawesome/free-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from 'framer-motion';
 import { useAppSelector } from "public/main/redux-store/app.hooks";
+import LanguageSelector from "public/shared/components/langueSelector";
 import { selectAllSkillState } from "public/shared/reduxStore/skills/selectors";
 import { ISkill } from "public/shared/types/Skill";
 import { ReactNode } from "react";
@@ -33,14 +34,23 @@ const Skills = () => {
         type: 'spring',
         stiffness: 100,
         damping: 10,
-        staggerChildren: 0.1,
+        staggerChildren: 0.3, // Délai entre chaque enfant
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 200,
+        damping: 15,
+      },
+    },
   };
 
   /**
@@ -74,9 +84,12 @@ const Skills = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className=" text-center">
+        <LanguageSelector /> {/* Ajout du sélecteur de langue */}
+      </div>
       <h1 className="text-3xl font-semibold mb-8 text-center">{t('SKILLS.TITLE')}</h1>
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -101,13 +114,15 @@ const Skills = () => {
                 {getIcon(skill.icon_name)}
               </div>
               <h2 className="text-xl font-semibold mb-2 text-center">{skill.name}</h2>
-              <div className="w-full bg-gray-200 rounded-full h-6">
+              <div className="w-full bg-gray-200 rounded-full h-5 relative">
                 <div
-                  className={`${getColor(skill.percentage)} h-6 rounded-full`}
+                  className={`${getColor(skill.percentage)} h-5 rounded-full`}
                   style={{ width: `${skill.percentage}%` }}
                 ></div>
+                <span className="absolute inset-0 flex items-center justify-center text-xs text-black font-bold">
+                  {skill.percentage}%
+                </span>
               </div>
-              <p className="text-center mt-2">{skill.percentage}%</p>
             </motion.div>
           ))
         )}

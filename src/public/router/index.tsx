@@ -5,7 +5,7 @@ import Home from "public/pages/home";
 import Project from "public/pages/project";
 import Skills from "public/pages/skills";
 import Layout from "public/shared/components/layout";
-import { setListProject } from "public/shared/reduxStore/projects/reducers";
+import { setListProject, setLoading as setLoadingProject } from "public/shared/reduxStore/projects/reducers";
 import { setListSkill, setLoading } from "public/shared/reduxStore/skills/reducers";
 import { getProjects } from "public/shared/service/Project";
 import { getSkills } from "public/shared/service/SkillsService";
@@ -39,9 +39,12 @@ const PublicRoutes: React.FC = () => {
    */
   const fetchProjects = async () => {
     try {
+      dispatch(setLoadingProject(true))
       const fetchedProjects = await getProjects();
       dispatch(setListProject(fetchedProjects))
+      dispatch(setLoadingProject(false))
     } catch (error) {
+      dispatch(setLoadingProject(false))
       toast.error(t('ERROR.FETCH_PROJECTS', { name: "ANDRIARILALAO Johny Lino" }));
     }
   };

@@ -15,20 +15,7 @@
   "PROJECTS": {
     "TITLE": "Mes Projets",
     "DESCRIPTION": "Voici tous mes projets.",
-    "PROJECTS_LIST": [
-      {
-        "TITLE": "Baztille",
-        "DESCRIPTION": "Un projet pour Baztille.",
-        "TECHNOLOGIES": "React, TailwindCSS, Firebase",
-        "LINK": "https://baztille.example.com"
-      },
-      {
-        "TITLE": "Concours ENI",
-        "DESCRIPTION": "Un projet pour le Concours ENI.",
-        "TECHNOLOGIES": "Vue, Vuetify, Node.js",
-        "LINK": "https://concourseni.example.com"
-      }
-    ]
+    "VISIT_SITE": "Visiter le site"
   },
   "SKILLS": {
     "TITLE": "Comptétences"
