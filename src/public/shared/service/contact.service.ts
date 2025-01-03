@@ -9,7 +9,6 @@ const contactsCollection = collection(db, COLLECTION_NAME);
 export const addContact = async (contact: WithFieldValue<DocumentData>): Promise<void> => {
   try {
     await addDoc(contactsCollection, contact);
-    console.log('Contact ajouté avec succès:', contact);
   } catch (error) {
     throw error;
   }

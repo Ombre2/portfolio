@@ -1,0 +1,96 @@
+[debug] [2025-01-03T19:52:16.919Z] ----------------------------------------------------------------------
+[debug] [2025-01-03T19:52:16.923Z] Command:       /home/ombre2/.nvm/versions/node/v20.18.0/bin/node /home/ombre2/.nvm/versions/node/v20.18.0/bin/firebase init functions
+[debug] [2025-01-03T19:52:16.924Z] CLI Version:   13.29.1
+[debug] [2025-01-03T19:52:16.924Z] Platform:      linux
+[debug] [2025-01-03T19:52:16.924Z] Node Version:  v20.18.0
+[debug] [2025-01-03T19:52:16.925Z] Time:          Fri Jan 03 2025 22:52:16 GMT+0300 (heure normale d’Afrique de l’Est)
+[debug] [2025-01-03T19:52:16.925Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-03T19:52:17.022Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-03T19:52:17.022Z] > authorizing via signed-in user (johnylegenie@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /mnt/00D0537BD053763E/Projet personnel/Portfollio/Linux/portfolio
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-01-03T19:52:17.027Z] Using project from CLI flag: portfolio-23d8c
+[debug] [2025-01-03T19:52:17.029Z] Checked if tokens are valid: false, expires at: 1735934831667
+[debug] [2025-01-03T19:52:17.029Z] Checked if tokens are valid: false, expires at: 1735934831667
+[debug] [2025-01-03T19:52:17.029Z] > refreshing access token with scopes: []
+[debug] [2025-01-03T19:52:17.032Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-01-03T19:52:17.032Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-01-03T19:52:18.032Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-01-03T19:52:18.032Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-01-03T19:52:18.039Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-23d8c [none]
+[debug] [2025-01-03T19:52:19.312Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-23d8c 200
+[debug] [2025-01-03T19:52:19.313Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-23d8c {"projectId":"portfolio-23d8c","projectNumber":"59549337183","displayName":"portFolio","name":"projects/portfolio-23d8c","resources":{"hostingSite":"portfolio-23d8c"},"state":"ACTIVE","etag":"1_1dddb8f0-cb4c-4d97-8247-57f85a4a5fb8"}
+[info] i  Using project portfolio-23d8c (portFolio) 
+[info] 
+=== Functions Setup
+[debug] [2025-01-03T19:52:19.324Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-03T19:52:19.324Z] > authorizing via signed-in user (johnylegenie@gmail.com)
+[debug] [2025-01-03T19:52:19.324Z] [iam] checking project portfolio-23d8c for permissions ["firebase.projects.get"]
+[debug] [2025-01-03T19:52:19.325Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:19.325Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:19.325Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-23d8c:testIamPermissions [none]
+[debug] [2025-01-03T19:52:19.325Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-23d8c:testIamPermissions x-goog-quota-user=projects/portfolio-23d8c
+[debug] [2025-01-03T19:52:19.326Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-23d8c:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-01-03T19:52:21.640Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-23d8c:testIamPermissions 200
+[debug] [2025-01-03T19:52:21.640Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-23d8c:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-01-03T19:52:21.641Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:21.641Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:21.641Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:21.642Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:21.642Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-01-03T19:52:21.642Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/portfolio-23d8c
+[debug] [2025-01-03T19:52:21.644Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-01-03T19:52:21.644Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/portfolio-23d8c
+[debug] [2025-01-03T19:52:24.043Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/runtimeconfig.googleapis.com 200
+[debug] [2025-01-03T19:52:24.043Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-01-03T19:52:24.064Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com 200
+[debug] [2025-01-03T19:52:24.065Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-01-03T19:52:24.065Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:24.065Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:24.065Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2025-01-03T19:52:24.066Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/portfolio-23d8c
+[debug] [2025-01-03T19:52:26.103Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2025-01-03T19:52:26.103Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2025-01-03T19:52:36.105Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:36.106Z] Checked if tokens are valid: true, expires at: 1735937537032
+[debug] [2025-01-03T19:52:36.106Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-01-03T19:52:36.106Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/portfolio-23d8c
+[debug] [2025-01-03T19:52:38.319Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com 200
+[debug] [2025-01-03T19:52:38.319Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/portfolio-23d8c/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] ✔  Wrote functions/package.json 
+[info] ✔  Wrote functions/.eslintrc.js 
+[info] ✔  Wrote functions/tsconfig.json 
+[info] ✔  Wrote functions/tsconfig.dev.json 
+[info] ✔  Wrote functions/src/index.ts 
+[info] ✔  Wrote functions/.gitignore 
