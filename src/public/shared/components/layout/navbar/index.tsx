@@ -1,40 +1,76 @@
-import { Bars3Icon } from "@heroicons/react/20/solid";
+import { Bars3Icon } from '@heroicons/react/20/solid';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import LanguageSelector from '../../langueSelector';
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const navigationLinks = [
+    { to: '/public/home', label: t('NAV.HOME') },
+    { to: '/public/projects', label: t('NAV.PROJECTS') },
+    { to: '/public/skills', label: t('NAV.SKILLS') },
+    { to: '/public/contact', label: t('NAV.CONTACT') }
+    // { to: '/public/about', label: t('NAV.ABOUT') }
+  ];
+
   return (
     <>
-      {/* Bouton de menu pour mobiles */}
-      <div className="fixed top-0 z-50 w-full flex justify-between items-center bg-gray-800 p-2 lg:hidden">
+      {/* Navbar */}
+      <div className="fixed top-0 z-50 w-full flex items-center justify-between bg-gray-800 p-4">
+        {/* Bouton menu mobile */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 hover:text-white"
+          className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white lg:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-label="Toggle menu"
         >
-          <span className="sr-only">Open main menu</span>
           <Bars3Icon className="h-6 w-6" aria-hidden="true" />
         </button>
-        <div className="text-white text-xl font-semibold">Mon Portfolio</div>
+
+        {/* Nom "JOHNY" */}
+        <div className="hidden lg:flex items-center space-x-4 ">
+          <span className="text-white text-lg font-bold">JOHNY</span>
+        </div>
+
+        {/* Navigation Desktop */}
+        <ul className="hidden lg:flex lg:flex-row lg:space-x-8 lg:items-center">
+          {navigationLinks.map((link) => (
+            <li key={link.to}>
+              <Link to={link.to} className="text-white hover:text-gray-300">
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Sélecteur de langue */}
+        <div className="text-white font-semibold ">
+          <LanguageSelector />
+        </div>
       </div>
 
-      {/* Navbar qui s'affiche automatiquement sur les écrans plus larges */}
-      <nav className={`bg-gray-800 text-white w-64 h-screen fixed top-0 left-0 overflow-y-auto ${mobileMenuOpen ? "block" : "hidden"} lg:block`}>
-        <div className="flex flex-col justify-center items-center h-full">
-          <h1 className="text-3xl font-semibold p-4">Mon Portfolio</h1>
-          <ul className="flex flex-col space-y-2 p-4">
-            <li><Link to="/public/home">{t('NAV.HOME')}</Link></li>
-            <li><Link to="/public/projects">{t('NAV.PROJECTS')}</Link></li>
-            <li><Link to="/public/skills">{t('NAV.SKILLS')}</Link></li>
-            <li><Link to="/public/contact">{t('NAV.CONTACT')}</Link></li>
-            <li><Link to="/public/about">{t('NAV.ABOUT')}</Link></li>
+      {/* Navigation Mobile */}
+      {mobileMenuOpen && (
+        <div className="fixed top-14 left-0 z-40 w-full bg-gray-800 p-4 lg:hidden">
+          <ul className="flex flex-col space-y-4">
+            {navigationLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="block text-white hover:text-gray-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-      </nav>
+      )}
     </>
   );
 };

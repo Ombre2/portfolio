@@ -4,6 +4,6 @@ export interface IProject {
   description: string;
   technologies: string[];
   link: string;
-  file_name: string;
   isRecent: boolean;
+  images: string[];
 }

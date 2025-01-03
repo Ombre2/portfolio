@@ -1,4 +1,4 @@
-import { addContact } from 'public/shared/service/Contact';
+import { addContact } from 'public/shared/service/contact.service';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,20 +17,20 @@ const Contact: React.FC = () => {
     setError('');
 
     try {
-      setLoading(true)
+      setLoading(true);
       await addContact({
         name,
         email,
         message,
-        timestamp: new Date(),
+        timestamp: new Date()
       });
       setSuccess(true);
       setName('');
       setEmail('');
       setMessage('');
-      setLoading(false)
+      setLoading(false);
     } catch (err) {
-      setLoading(false)
+      setLoading(false);
       setError(t('CONTACT.ERROR_MESSAGE'));
     }
   };

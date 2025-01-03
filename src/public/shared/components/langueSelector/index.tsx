@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageSelector: React.FC = () => {
@@ -9,10 +9,16 @@ const LanguageSelector: React.FC = () => {
   };
 
   return (
-    <div className="language-selector mb-4">
-      <button onClick={() => changeLanguage('en')} className="mx-2 text-blue-500 hover:underline">English</button>
-      <button onClick={() => changeLanguage('fr')} className="mx-2 text-blue-500 hover:underline">Français</button>
-      <button onClick={() => changeLanguage('es')} className="mx-2 text-blue-500 hover:underline">Español</button>
+    <div className="language-selector">
+      <select
+        onChange={(e) => changeLanguage(e.target.value)}
+        className="border rounded px-1 py-1 text-blue-500 text-sm"
+        defaultValue={i18n.language}
+      >
+        <option value="en">🇺🇸 English</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="es">🇪🇸 Español</option>
+      </select>
     </div>
   );
 };

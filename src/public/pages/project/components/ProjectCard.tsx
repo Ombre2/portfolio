@@ -1,40 +1,71 @@
-import { IProject } from "public/shared/types/Project";
+import { IProject } from 'public/shared/types/Project';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import 'react-slideshow-image/dist/styles.css';
 
-interface ProjectCardProps {
-  project: IProject
+interface ProjectListProps {
+  project: IProject;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectList: React.FC<ProjectListProps> = ({ project }) => {
   /**
    * VARIABLE
    */
-  const { description, file_name, link, technologies, title } = project;
+  const projectImages = [project.images[0], 'concours_eni.png'];
+  const navigate = useNavigate();
+
+  /**
+   * FUNCTION
+   */
+  const handleShowDetailProject = () => {
+    if (!project.id) return;
+    navigate(`/public/project/${project.id}`);
+  };
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-      <img className="w-full h-48 object-cover" src={require(`../../../shared/assets/image/project/${file_name}`)} alt={title} />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">
-          {description}
-        </p>
-      </div>
-      <div className="px-6 pt-4 pb-2">
-        {technologies?.map((tech: string) => (
-          <span key={tech} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            {tech}
-          </span>
-        ))}
+    <div className="space-y-4">
+      <div key={project.images[0]} className="flex flex-col bg-gray-100 p-4 rounded shadow">
+        {/* Image principale */}
+        {project.images[0] && (
+          <img
+            src={require(`../../../shared/assets/image/project/${project.images[0]}`)}
+            alt={project.title}
+            className="w-full h-48 object-cover rounded cursor-pointer"
+            onClick={handleShowDetailProject} // Ouvre la modal
+          />
+        )}
 
-      </div>
-      <div className="px-6 pb-4">
-        <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-          Visit site
-        </a>
+        {/* Contenu */}
+        <div className="mt-4">
+          <h2 className="text-xl font-bold">{project.title}</h2>
+          {project.description && <p className="text-gray-700 mt-2">{project.description}</p>}
+
+          {project.technologies?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {project.technologies.map((tech) => (
+                <span key={tech} className="bg-gray-200 text-sm font-semibold px-3 py-1 rounded">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {project.link && (
+            <div className="mt-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                Visit site
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-export default ProjectCard;
+export default ProjectList;
