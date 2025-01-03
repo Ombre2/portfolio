@@ -78,7 +78,7 @@ const Skills = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-semibold mb-8 text-center">{t('SKILLS.TITLE')}</h1>
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6  gap-6"
         initial="hidden"
         animate="visible"
         variants={containerVariants}

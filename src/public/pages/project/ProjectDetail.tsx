@@ -36,7 +36,7 @@ const ProjectDetail: React.FC = () => {
    * RENDER
    */
   if (!project) {
-    return <div>Chargement des détails du projet...</div>;
+    return <div className="container mx-auto p-4">Chargement des détails du projet...</div>;
   }
 
   return (
