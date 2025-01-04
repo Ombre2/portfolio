@@ -6,4 +6,5 @@ export interface IProject {
   link: string;
   isRecent: boolean;
   images: string[];
+  link_github?: string;
 }

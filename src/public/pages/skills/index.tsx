@@ -5,6 +5,7 @@ import { useAppSelector } from 'public/main/redux-store/app.hooks';
 import NestJs from 'public/shared/assets/image/project/nestJs.svg';
 import { selectAllSkillState } from 'public/shared/reduxStore/skills/selectors';
 import { ISkill } from 'public/shared/types/Skill';
+import { containerVariants, itemVariants } from 'public/shared/utils';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import Skeleton from 'react-loading-skeleton';
@@ -24,24 +25,6 @@ const Skills = () => {
   /**
    * VARIABLE
    */
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 10,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
 
   /**
    * FUNCTION

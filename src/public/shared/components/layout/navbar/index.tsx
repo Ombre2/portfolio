@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
 
         {/* Nom "JOHNY" */}
         <div className="hidden lg:flex items-center space-x-4 ">
-          <span className="text-white text-lg font-bold">JOHNY</span>
+          <span className="text-white text-lg font-bold">Johny</span>
         </div>
 
         {/* Navigation Desktop */}

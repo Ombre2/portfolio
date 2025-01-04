@@ -4,11 +4,13 @@ import { IProject } from 'public/shared/types/Project';
 // Define a type for the slice state
 interface ProjectState {
   listProject: IProject[];
+  loadingProjectLists: boolean;
 }
 
 // Define the initial state using that type
 const initialState: ProjectState = {
-  listProject: []
+  listProject: [],
+  loadingProjectLists: false
 };
 
 export const projectSlice = createSlice({
@@ -17,10 +19,13 @@ export const projectSlice = createSlice({
   reducers: {
     setListProject: (state, action: PayloadAction<IProject[]>) => {
       state.listProject = action.payload;
+    },
+    setLoadingProjectLists: (state, action: PayloadAction<boolean>) => {
+      state.loadingProjectLists = action.payload;
     }
   }
 });
 
-export const { setListProject } = projectSlice.actions;
+export const { setListProject, setLoadingProjectLists } = projectSlice.actions;
 
 export default projectSlice.reducer;

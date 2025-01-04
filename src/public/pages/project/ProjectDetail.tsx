@@ -43,8 +43,8 @@ const ProjectDetail: React.FC = () => {
     <div className="container mx-auto p-4">
       {/* Bouton retour */}
       <div className="mb-4">
-        <button onClick={() => navigate('/public/projects')} className="px-2 py-3 transition flex items-center gap-4">
-          <ArrowLeftIcon className="w-6 h-6" />
+        <button onClick={() => navigate('/public/projects')} className="pe-2 py-3 transition flex items-center gap-4">
+          <ArrowLeftIcon className="w-5 h-5" />
           Retour à la liste des projets
         </button>
       </div>
@@ -60,14 +60,28 @@ const ProjectDetail: React.FC = () => {
             </span>
           ))}
         </div>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:underline text-lg"
-        >
-          Voir le projet
-        </a>
+        <div className="flex flex-row space-x-4">
+          {project?.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline text-lg"
+            >
+              Voir le projet
+            </a>
+          )}
+          {project?.link_github && (
+            <a
+              href={project?.link_github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline text-lg"
+            >
+              Voir le dépôt GitHub
+            </a>
+          )}
+        </div>
       </div>
 
       {/* Liste des images */}
