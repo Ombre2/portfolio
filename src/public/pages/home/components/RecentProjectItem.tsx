@@ -12,7 +12,7 @@ const RecentProjectItem: React.FC<RecentProjectItemProps> = ({ project, onClick 
   return (
     <div
       key={id}
-      className="mb-6 overflow-hidden cursor-pointer group"
+      className={`mb-6 overflow-hidden cursor-pointer group recent-project-${id}`}
       onClick={() => onClick(project)}
       aria-label={`Voir les détails du projet ${title}`}
     >
