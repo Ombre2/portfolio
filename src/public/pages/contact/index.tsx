@@ -39,8 +39,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-semibold mb-8 text-center">{t('CONTACT.TITLE')}</h1>
+    <div className="container mx-auto px-4 py-8 sm:py-6">
+      <h1 className="text-3xl lg:text-4xl font-semibold mb-4 text-center">{t('CONTACT.TITLE')}</h1>
       <form className="max-w-md mx-auto bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
         {success && <p className="text-green-500 p-2 text-center">{t('CONTACT.SUCCESS_MESSAGE')}</p>}
         {error && <p className="text-red-500 p-2 text-center">{error}</p>}
