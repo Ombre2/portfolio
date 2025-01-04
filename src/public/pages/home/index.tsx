@@ -1,13 +1,12 @@
-import { motion } from 'framer-motion';
 import { useAppSelector } from 'public/main/redux-store/app.hooks';
 import { selectAllProjectState } from 'public/shared/reduxStore/projects/selectors';
 import { IProject } from 'public/shared/types/Project';
-import { itemVariants } from 'public/shared/utils';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import Skeleton from 'react-loading-skeleton';
 import Masonry from 'react-masonry-css';
 import { Link, useNavigate } from 'react-router-dom';
+import RecentProjectItem from './components/RecentProjectItem';
+import SkeletonProjectItem from './components/SkeletonRecentProject';
 
 const Home: FC = () => {
   /**
@@ -24,9 +23,9 @@ const Home: FC = () => {
    * VARIABLE
    */
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 4,
-    700: 3,
+    default: 3,
+    1100: 3,
+    700: 2,
     500: 1
   };
   const navigate = useNavigate();
@@ -58,43 +57,16 @@ const Home: FC = () => {
             {loadingProjectLists
               ? Array(8)
                   .fill(0)
-                  .map((_, index) => (
-                    <motion.div
-                      key={`skeleton-${index}`}
-                      className="mb-6 overflow-hidden cursor-pointer group"
-                      variants={itemVariants}
-                      style={{
-                        width: '100%',
-                        position: 'relative' // Nécessaire pour contenir le contenu absolu
-                      }}
-                    >
-                      <div className="relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <Skeleton className="w-full h-full" />
-                      </div>
-                    </motion.div>
-                  ))
+                  .map((_, index) => <SkeletonProjectItem key={`skeleton-${index}`} />)
               : listProject.map((project: IProject) => {
-                  const { id, images, isRecent, title } = project;
+                  const { isRecent } = project;
                   return (
                     isRecent && (
-                      <div
-                        key={id}
-                        className="mb-6 overflow-hidden cursor-pointer group"
+                      <RecentProjectItem
+                        key={`recent_project_${project.id}`}
+                        project={project}
                         onClick={() => handleShowDetailProject(project)}
-                        aria-label={`Voir les détails du projet ${title}`}
-                      >
-                        <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                          <img
-                            className="w-full object-cover transition-transform duration-300 group-hover:scale-105 max-h-[350px]"
-                            src={require(`../../shared/assets/image/project/${images[0]}`)}
-                            alt={title || 'Image du projet'}
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <p className="text-white text-lg font-semibold">{title}</p>
-                          </div>
-                        </div>
-                      </div>
+                      />
                     )
                   );
                 })}

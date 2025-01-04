@@ -3,6 +3,7 @@ import { getProjectById } from 'public/shared/service/project.service';
 import { IProject } from 'public/shared/types/Project';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import MotionDetailProject from './components/SkeletonDetailProject';
 
 const ProjectDetail: React.FC = () => {
   /**
@@ -11,6 +12,7 @@ const ProjectDetail: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState<IProject | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   /**
    * LIFECYCLE
@@ -24,10 +26,13 @@ const ProjectDetail: React.FC = () => {
    * API
    */
   const fetchProject = async (id: string) => {
+    setLoading(true);
     try {
       const fetchedProject = await getProjectById(id);
       setProject(fetchedProject);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.error('Erreur lors de la récupération du projet :', error);
     }
   };
@@ -35,8 +40,16 @@ const ProjectDetail: React.FC = () => {
   /**
    * RENDER
    */
+  if (loading) {
+    return <MotionDetailProject />;
+  }
+
   if (!project) {
-    return <div className="container mx-auto p-4">Chargement des détails du projet...</div>;
+    return (
+      <div className="container mx-auto p-4">
+        <p className="text-center text-gray-500">Aucun projet trouvé.</p>
+      </div>
+    );
   }
 
   return (

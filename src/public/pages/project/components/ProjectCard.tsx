@@ -11,7 +11,6 @@ const ProjectList: React.FC<ProjectListProps> = ({ project }) => {
   /**
    * VARIABLE
    */
-  const projectImages = [project.images[0], 'concours_eni.png'];
   const navigate = useNavigate();
 
   /**
