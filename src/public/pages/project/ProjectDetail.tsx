@@ -56,7 +56,10 @@ const ProjectDetail: React.FC = () => {
     <div className="container mx-auto p-4">
       {/* Bouton retour */}
       <div className="mb-4">
-        <button onClick={() => navigate('/public/projects')} className="pe-2 py-3 transition flex items-center gap-4">
+        <button
+          onClick={() => navigate('/public/home')}
+          className="pe-2 py-3 transition flex items-center gap-4  text-white"
+        >
           <ArrowLeftIcon className="w-5 h-5" />
           Retour à la liste des projets
         </button>
@@ -64,11 +67,11 @@ const ProjectDetail: React.FC = () => {
 
       {/* Détails du projet */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-6">{project.title}</h1>
-        <p className="text-gray-700 mb-6">{project.description}</p>
+        <h1 className="text-3xl font-bold mb-6  text-white">{project.title}</h1>
+        <p className="text-gray-700 mb-6 text-white">{project.description}</p>
         <div className="flex flex-wrap gap-3 mb-6">
           {project.technologies.map((tech, index) => (
-            <span key={index} className="bg-gray-200 text-sm font-semibold px-4 py-2 rounded">
+            <span key={index} className="rounded-full border text-sm font-semibold px-3 py-1 rounded text-slate-400">
               {tech}
             </span>
           ))}
