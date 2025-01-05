@@ -4,10 +4,11 @@ import { IProject } from 'public/shared/types/Project';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Joyride, { CallBackProps, Step } from 'react-joyride';
-import Masonry from 'react-masonry-css';
-import { Link, useNavigate } from 'react-router-dom';
-import RecentProjectItem from './components/RecentProjectItem';
-import SkeletonProjectItem from './components/SkeletonRecentProject';
+import { useNavigate } from 'react-router-dom';
+import Contact from '../contact';
+import Project from '../project';
+import Skills from '../skills';
+import IntroduceMyself from './components/IntroduiceMyself';
 
 const Home: FC = () => {
   /**
@@ -95,48 +96,10 @@ const Home: FC = () => {
           }
         }}
       />
-      <div className="flex items-center justify-center min-h-screen overflow-hidden">
-        <div className="container mx-auto px-4 py-6 flex flex-col justify-center items-center">
-          {/* Image de profil */}
-          <img
-            src={require(`../../shared/assets/image/johny.jpg`)}
-            alt=""
-            className="w-60 h-60 rounded-full shadow-lg mb-6"
-          />
-
-          {/* Texte d'introduction */}
-          <p className="text-lg mb-6 text-center max-w-2xl text-gray-600">{t('HOME.INTRODUCTION')}</p>
-
-          {/* Liste des projets récents */}
-          <div className="w-full h-full overflow-hidden flex justify-center">
-            <Masonry breakpointCols={breakpointColumnsObj} className="flex w-full" columnClassName="pl-4">
-              {loadingProjectLists
-                ? Array(8)
-                    .fill(0)
-                    .map((_, index) => <SkeletonProjectItem key={`skeleton-${index}`} />)
-                : listProject.map((project: IProject) => {
-                    const { isRecent } = project;
-                    return (
-                      isRecent && (
-                        <RecentProjectItem
-                          key={`recent_project_${project.id}`}
-                          project={project}
-                          onClick={() => handleShowDetailProject(project)}
-                        />
-                      )
-                    );
-                  })}
-            </Masonry>
-          </div>
-
-          {/* Liens vers les autres pages */}
-          <div className="text-center mt-6">
-            <Link to="/public/contact" className="text-blue-500 hover:underline">
-              {t('HOME.CONTACT')}
-            </Link>
-          </div>
-        </div>
-      </div>
+      <IntroduceMyself />
+      <Project />
+      <Skills />
+      <Contact />
     </>
   );
 };

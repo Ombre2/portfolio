@@ -1,7 +1,8 @@
 {
   "HOME": {
     "WELCOME": "Welcome to My Portfolio",
-    "INTRODUCTION": "Hi, I'm Johny, a web developer specializing in creating stunning and responsive web applications. Here are some of my recent projects.",
+    "INTRODUCTION": "Hi ! I'm Johny",
+    "DESCRIPTION": "A web developer specializing in creating stunning and responsive web applications. Here are some of my recent projects.",
     "LEARN_MORE": "Learn more about me",
     "CONTACT": "Contact me"
   },
@@ -40,7 +41,8 @@
     "MESSAGE_LABEL": "Message",
     "SEND_BUTTON": "Send",
     "SUCCESS_MESSAGE": "Message sent successfully!",
-    "ERROR_MESSAGE": "Failed to send message, please try again."
+    "ERROR_MESSAGE": "Failed to send message, please try again.",
+    "SENDING_BUTTON": "Chargement ..."
   },
   "ERROR": {
     "FETCH_PROJECTS": "Error fetching {{name}}'s projects",

@@ -302,26 +302,7 @@ module.exports = {
       DEFAULT: '1'
     },
     fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
-      ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: [
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace'
-      ]
+      sans: ['Montserrat', 'ui-sans-serif', 'system-ui']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

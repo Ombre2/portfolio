@@ -44,3 +44,23 @@
   background-size: cover;
   height: 350px;
 }
+
+/* Style pour la scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e; /* Couleur de fond */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Dégradé futuriste */
+  border-radius: 10px; /* Coins arrondis */
+  border: 3px solid #1a1a2e; /* Espacement avec la bordure */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb); /* Couleur change au survol */
+}

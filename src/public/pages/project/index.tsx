@@ -18,9 +18,14 @@ const Project: React.FC = () => {
   const { listProject, loadingProjectLists } = useAppSelector(selectAllProjectState);
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <h1 className="text-4xl font-semibold mb-6 text-center">{t('PROJECTS.TITLE')}</h1>
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="container mx-auto sm:px-10 py-6 px-5">
+      <h1
+        className="text-6xl font-semibold mb-6  text-white"
+        style={{ fontFamily: '"Montserrat", serif', fontWeight: 900 }}
+      >
+        {t('PROJECTS.TITLE')}
+      </h1>
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-10">
         {loadingProjectLists
           ? Array(4)
               .fill(0)
