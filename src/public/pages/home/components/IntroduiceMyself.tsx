@@ -8,9 +8,9 @@ const IntroduceMyself: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center justify-center overflow-hidden h-dvh static">
+    <div className="flex items-center justify-center overflow-hidden h-[400px] lg:h-dvh static">
       {/* Texte introductif */}
-      <div className="relative flex flex-col-reverse lg:flex-row items-center gap-8 px-8 w-full text-white z-10">
+      <div className="relative flex flex-col-reverse lg:flex-row items-center gap-8 px-8 w-full text-white z-10 lg:pl-28">
         <div className="max-w-lg text-center lg:text-left">
           {/* Taille du texte ajustée pour mobile et desktop */}
           <h1 className="text-3xl sm:text-4xl lg:text-7xl leading-relaxed font-black">{t('HOME.INTRODUCTION')}</h1>
@@ -19,7 +19,7 @@ const IntroduceMyself: React.FC = () => {
       </div>
 
       {/* Image responsive */}
-      <div className="absolute bottom-0 right-0 w-[50%] lg:w-[40%]  max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px]">
+      <div className="absolute bottom-0 right-0 w-[50%] lg:w-[40%] max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px] hidden sm:block">
         <img
           src={require(`../../../shared/assets/image/johny.png`)}
           alt="Profile"
