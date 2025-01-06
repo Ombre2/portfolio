@@ -12,7 +12,6 @@ const ProjectList: React.FC<ProjectListProps> = ({ project }) => {
    * VARIABLE
    */
   const navigate = useNavigate();
-
   /**
    * FUNCTION
    */

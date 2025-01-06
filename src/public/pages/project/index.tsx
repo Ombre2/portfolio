@@ -30,7 +30,9 @@ const Project: React.FC = () => {
           ? Array(4)
               .fill(0)
               .map((_, index) => <SkeletonProjectCard key={`motion_card_${index}`} />)
-          : listProject.map((project: IProject, index: number) => <ProjectCard key={index} project={project} />)}
+          : listProject.map(
+              (project: IProject, index: number) => project.isReadyAll && <ProjectCard key={index} project={project} />
+            )}
       </div>
     </div>
   );

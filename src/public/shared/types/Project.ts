@@ -7,4 +7,6 @@ export interface IProject {
   isRecent: boolean;
   images: string[];
   link_github?: string;
+  subfolder?: string;
+  isReadyAll?: boolean;
 }
