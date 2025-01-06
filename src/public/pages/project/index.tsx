@@ -18,9 +18,9 @@ const Project: React.FC = () => {
   const { listProject, loadingProjectLists } = useAppSelector(selectAllProjectState);
 
   return (
-    <div className="container mx-auto sm:px-10 py-6 px-5">
+    <div className="container mx-auto sm:px-10  px-5">
       <h1
-        className="text-6xl font-semibold mb-6  text-white"
+        className="text-4xl sm:text-5xl lg:text-6xl  font-semibold mb-6 text-blue-300"
         style={{ fontFamily: '"Montserrat", serif', fontWeight: 900 }}
       >
         {t('PROJECTS.TITLE')}

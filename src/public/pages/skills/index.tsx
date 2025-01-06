@@ -14,13 +14,13 @@ const Skills: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-4 sm:py-6">
       <h1
-        className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 sm:mb-8 text-white"
+        className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 sm:mb-8 text-blue-300"
         style={{ fontFamily: '"Montserrat", serif', fontWeight: 900 }}
       >
         {t('SKILLS.TITLE')}
       </h1>
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8"
         initial="hidden"
         animate="visible"
         variants={containerVariants}

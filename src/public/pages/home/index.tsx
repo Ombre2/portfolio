@@ -96,10 +96,12 @@ const Home: FC = () => {
           }
         }}
       />
-      <IntroduceMyself />
-      <Project />
-      <Skills />
-      <Contact />
+      <div className="flex gap-10 flex-col">
+        <IntroduceMyself />
+        <Project />
+        <Skills />
+        <Contact />
+      </div>
     </>
   );
 };

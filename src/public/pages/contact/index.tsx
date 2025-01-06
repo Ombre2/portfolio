@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8 sm:py-6 text-gray-100">
       <h1
-        className="text-6xl font-semibold mb-4 text-blue-300"
+        className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-4 text-blue-300"
         style={{ fontFamily: '"Montserrat", serif', fontWeight: 900 }}
       >
         {t('CONTACT.TITLE')}
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
           <button
             disabled={loading}
             type="submit"
-            className={`relative w-full py-3 px-6 text-xl font-semibold rounded-lg overflow-hidden transition duration-300 ${
+            className={`relative w-full py-2 px-2 text-xl font-semibold rounded-lg overflow-hidden transition duration-300 ${
               loading ? 'bg-blue-700 text-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-blue-100'
             }`}
             style={{
